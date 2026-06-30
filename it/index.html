@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Drift - Sito Ufficiale dell'Autore</title>
+  
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM (Stessi token del sito inglese)
+       ========================================================================== */
+    :root {
+      --cold-surface: #0a0d12;
+      --cold-line: #1e2530;
+      --text-color: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent-color: #38bdf8;
+      --btn-brace: #0284c7;
+      --btn-text: #ffffff;
+      --star-color: #f59e0b;
+      --nav-bg: rgba(10, 13, 18, 0.85);
+    }
+
+    body {
+      margin: 0;
+      background-color: #05070a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text-color);
+      padding-top: 70px;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; box-sizing: border-box; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5em; font-weight: 600; padding: 1rem 2rem; border-radius: 4px; text-decoration: none; cursor: pointer; transition: opacity 0.2s; }
+    .btn--brace { background-color: var(--btn-brace); color: var(--btn-text); }
+    .w-100 { width: 100%; }
+    .navbar { position: fixed; top: 0; width: 100%; height: 70px; background-color: var(--nav-bg); border-bottom: 1px solid var(--cold-line); z-index: 1000; display: flex; align-items: center; }
+    .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+    .navbar__brand { font-weight: 800; text-transform: uppercase; color: var(--text-color); text-decoration: none; }
+    .navbar__brand span { color: var(--accent-color); }
+    .navbar__nav { display: flex; gap: 2rem; list-style: none; }
+    .navbar__link { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
+    .hero { padding: 8rem 0; border-bottom: 1px solid var(--cold-line); }
+    .hero__title { font-size: 3.5rem; line-height: 1.1; margin-bottom: 2rem; font-weight: 900; }
+    .section-books, .section-reviews, .section-prequel { padding: 6rem 0; border-bottom: 1px solid var(--cold-line); }
+    .drift-card { background: rgba(255, 255, 255, 0.01); border: 1px solid var(--cold-line); padding: 2.5rem; border-radius: 4px; }
+    .grid-system { display: grid; gap: 2.5rem; margin-top: 3rem; grid-template-columns: 1fr; }
+    @media (min-width: 768px) { .grid-system { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 992px) { .grid-system--3-col { grid-template-columns: repeat(3, 1fr); } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="navbar__brand">The<span>Drift</span></a>
+      <ul class="navbar__nav">
+        <li><a href="#hero" class="navbar__link">Home</a></li>
+        <li><a href="#books" class="navbar__link">Libri</a></li>
+        <li><a href="#reviews" class="navbar__link">Recensioni</a></li>
+        <li><a href="#prequel" class="navbar__link">Prequel</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header id="hero" class="hero">
+    <div class="container">
+      <h1 class="hero__title">Il tempo è monitorato. La vita è valuta.</h1>
+      <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 700px;">
+        Immergiti in un universo sci-fi crudo dove ogni secondo vissuto è registrato, posseduto e scambiato da un'élite immortale. Combatterai il sistema o diventerai una risorsa?
+      </p>
+      <a href="#books" class="btn btn--brace">Scopri i volumi pubblicati</a>
+    </div>
+  </header>
+
+  <section id="books" class="section-books">
+    <div class="container">
+      <h2>Le Opere Pubblicate</h2>
+      <div class="grid-system">
+        <div class="drift-card">
+          <h3>The Drift Core</h3>
+          <p>Il punto di partenza definitivo. Segui la guerra asimmetrica contro il Registro mentre il protocollo incontra il suo primo fallimento critico.</p>
+          <button class="btn btn--brace w-100">Vedi su Amazon KDP</button>
+        </div>
+        <div class="drift-card">
+          <h3>System Overdrive</h3>
+          <p>La continuazione diretta del conflitto. Le squadre di estrazione asset vengono dispiegate per ripulire i settori non censiti prima che la verità trapeli.</p>
+          <button class="btn btn--brace w-100">Vedi su Amazon KDP</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="section-reviews">
+    <div class="container" style="text-align: center;">
+      <h2>Cosa dicono i lettori</h2>
+      <div class="grid-system grid-system--3-col">
+        <div class="drift-card">
+          <p>"Un concetto incredibile. Il modo in cui il tempo viene usato come arma mi ha tenuto sveglio fino alle 3 del mattino."</p>
+          <p><strong>Austin K.</strong><br><em>Acquisto Verificato</em></p>
+        </div>
+        <div class="drift-card">
+          <p>"Lore tagliente come un rasoio. Una visione terrificante e plausibile di cosa accade quando la vita umana viene quantificata."</p>
+          <p><strong>Sarah M.</strong><br><em>Top Contributor</em></p>
+        </div>
+        <div class="drift-card">
+          <p>"Grintoso, ritmato e cinematografico. Personaggi che operano in un mondo privo di misericordia."</p>
+          <p><strong>Marcus T.</strong><br><em>Acquisto Verificato</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prequel" class="section-prequel">
+    <div class="container">
+      <h2>Prima che il Registro prendesse tutto.</h2>
+      <p>Inserisci la tua email per scaricare il prequel esclusivo e scoprire l'origine del furto.</p>
+      <div class="drift-card" style="max-width: 500px; margin: 0 auto;">
+        <form id="prequel-form">
+          <input type="email" class="form-control" placeholder="Il tuo indirizzo email..." required>
+          <button type="submit" class="btn btn--brace w-100" style="margin-top: 1rem;">Scarica l'accesso al Prequel</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
