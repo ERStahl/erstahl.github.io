@@ -1,15 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Drift - Official Author Website</title>
-  
   <style>
-    /* ==========================================================================
-       DESIGN SYSTEM TOKENS & RESET
-       ========================================================================== */
     :root {
       --cold-surface: #0a0d12;
       --cold-line: #1e2530;
@@ -21,458 +16,54 @@
       --star-color: #f59e0b;
       --nav-bg: rgba(10, 13, 18, 0.85);
     }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #05070a;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--text-color);
-      -webkit-font-smoothing: antialiased;
-      padding-top: 70px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      box-sizing: border-box;
-    }
-
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      border: 0;
-    }
-
-    .text-uppercase { text-transform: uppercase; }
-    .w-100 { width: 100%; }
-
-    /* ==========================================================================
-       MODULE 1: NAVBAR
-       ========================================================================== */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 70px;
-      background-color: var(--nav-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--cold-line);
-      z-index: 1000;
-      box-sizing: border-box;
-    }
-
-    .navbar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 100%;
-    }
-
-    .navbar__brand {
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-color);
-      text-decoration: none;
-    }
-
+    body { margin: 0; padding: 0; background-color: #05070a; font-family: -apple-system, sans-serif; color: var(--text-color); padding-top: 70px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; box-sizing: border-box; }
+    .navbar { position: fixed; top: 0; left: 0; width: 100%; height: 70px; background-color: var(--nav-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--cold-line); z-index: 1000; }
+    .navbar .container { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+    .navbar__brand { font-size: 1.15rem; font-weight: 800; text-transform: uppercase; color: var(--text-color); text-decoration: none; }
     .navbar__brand span { color: var(--accent-color); }
-
-    .navbar__nav {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .navbar__link {
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
+    .navbar__nav { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+    .navbar__link { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); text-decoration: none; }
     .navbar__link:hover { color: var(--accent-color); }
-
-    /* ==========================================================================
-       MODULE 2: HERO BACKGROUND & LAYOUT
-       ========================================================================== */
-    .hero {
-      position: relative;
-      padding: 8rem 0;
-      overflow: hidden;
-      border-bottom: 1px solid var(--cold-line);
-    }
-
-    .hero__content {
-      max-width: 700px;
-    }
-
-    .hero__tagline {
-      display: inline-block;
-      font-size: 0.85rem;
-      letter-spacing: 0.2em;
-      color: var(--accent-color);
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-    }
-
-    .hero__title {
-      font-size: 3.5rem;
-      line-height: 1.1;
-      margin-top: 0;
-      margin-bottom: 2rem;
-      font-weight: 900;
-    }
-
-    @media (max-width: 768px) {
-      .hero__title { font-size: 2.5rem; }
-    }
-
-    /* ==========================================================================
-       MODULE 3 & 4: BOOKS GRID & REUSABLE CARDS
-       ========================================================================== */
-    .section-books {
-      padding: 6rem 0;
-      border-bottom: 1px solid var(--cold-line);
-    }
-
-    .grid-system {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-      margin-top: 3rem;
-    }
-
-    @media (min-width: 768px) {
-      .grid-system--2-col { grid-template-columns: repeat(2, 1fr); }
-      .grid-system--3-col { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .drift-card {
-      background: rgba(255, 255, 255, 0.01);
-      border: 1px solid var(--cold-line);
-      padding: 2.5rem;
-      border-radius: 4px;
-      position: relative;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
-    }
-
-    .drift-card:hover {
-      border-color: var(--accent-color);
-      transform: translateY(-4px);
-    }
-
-    .drift-card--tech::before {
-      content: '';
-      position: absolute;
-      top: -1px;
-      left: -1px;
-      width: 12px;
-      height: 12px;
-      border-top: 2px solid var(--accent-color);
-      border-left: 2px solid var(--accent-color);
-    }
-
-    .drift-card__tag {
-      display: block;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent-color);
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-
-    .drift-card__title {
-      font-size: 1.5rem;
-      margin-top: 0;
-      margin-bottom: 1rem;
-      color: var(--text-color);
-    }
-
-    .drift-card__body {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-    }
-
-    /* ==========================================================================
-       MODULE 5: SOCIAL PROOF / REVIEWS
-       ========================================================================== */
-    .section-reviews {
-      padding: 6rem 0;
-      border-bottom: 1px solid var(--cold-line);
-    }
-
-    .review-stars {
-      color: var(--star-color);
-      font-size: 0.95rem;
-      letter-spacing: 2px;
-      margin-bottom: 1rem;
-    }
-
-    .reviewer-meta {
-      display: flex;
-      flex-direction: column;
-      border-top: 1px solid var(--cold-line);
-      padding-top: 1rem;
-    }
-
-    .reviewer__name { font-size: 0.9rem; font-weight: 700; }
-    .reviewer__status { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-top: 0.25rem; }
-
-    /* ==========================================================================
-       MODULE 6: LEAD CAPTURE (#PREQUEL)
-       ========================================================================== */
-    .section-prequel {
-      background-color: var(--cold-surface);
-      padding: 6rem 0;
-    }
-
-    .prequel__description {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-    }
-
-    .prequel__meta {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      font-size: 0.875rem;
-      border-left: 2px solid var(--cold-line);
-      padding-left: 1rem;
-    }
-
-    .form-group { position: relative; margin-bottom: 1.25rem; }
-    
-    .form-control {
-      width: 100%;
-      padding: 1rem 1.25rem;
-      background-color: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--cold-line);
-      color: var(--text-color);
-      font-family: inherit;
-      font-size: 1rem;
-      box-sizing: border-box;
-      border-radius: 4px;
-      transition: border-color 0.3s ease;
-    }
-
-    .form-control:focus { outline: none; border-color: var(--accent-color); }
-
-    .btn--brace {
-      background-color: var(--btn-brace);
-      color: var(--btn-text);
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: opacity 0.2s ease;
-    }
-
-    .btn--brace:hover { opacity: 0.9; }
-    .prequel__privacy { margin-top: 1.25rem; font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-bottom: 0; }
-
-    .form-error-message { display: none; color: #ff4a4a; font-size: 0.85rem; margin-top: 0.5rem; }
-    .prequel__form.has-error .form-control { border-color: #ff4a4a; }
-    .prequel__form.has-error .form-error-message { display: block; }
-    .form-status--success { text-align: center; }
-
-    @media (min-width: 992px) {
-      .section-prequel .container { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; }
-    }
+    .lang-selector { margin-left: 20px; font-size: 0.75rem; font-weight: 700; display: flex; gap: 5px; }
+    .hero { padding: 8rem 0; border-bottom: 1px solid var(--cold-line); }
+    .hero__title { font-size: 3.5rem; font-weight: 900; margin-bottom: 2rem; }
+    .section-books, .section-reviews, .section-prequel { padding: 6rem 0; border-bottom: 1px solid var(--cold-line); }
+    .grid-system { display: grid; gap: 2.5rem; margin-top: 3rem; grid-template-columns: 1fr; }
+    @media (min-width: 768px) { .grid-system { grid-template-columns: repeat(2, 1fr); } .grid-system--3-col { grid-template-columns: repeat(3, 1fr); } }
+    .drift-card { background: rgba(255, 255, 255, 0.01); border: 1px solid var(--cold-line); padding: 2.5rem; border-radius: 4px; }
+    .btn { display: inline-block; padding: 1rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; text-align: center; background-color: var(--btn-brace); color: var(--btn-text); }
   </style>
 </head>
 <body>
-
-  <!-- GLOBAL NAVBAR -->
-  <nav class="navbar" aria-label="Main Navigation">
+  <nav class="navbar">
     <div class="container">
-      <a href="#" class="navbar__brand">The<span>Drift</span></a>
-      <ul class="navbar__nav">
-        <li><a href="#hero" class="navbar__link">Home</a></li>
-        <li><a href="#books" class="navbar__link">Books</a></li>
-        <li><a href="#reviews" class="navbar__link">Reviews</a></li>
-        <li><a href="#prequel" class="navbar__link">Prequel</a></li>
-      </ul>
+      <a href="/" class="navbar__brand">The<span>Drift</span></a>
+      <div style="display: flex; align-items: center;">
+        <ul class="navbar__nav">
+          <li><a href="#hero" class="navbar__link">Home</a></li>
+          <li><a href="#books" class="navbar__link">Books</a></li>
+          <li><a href="#reviews" class="navbar__link">Reviews</a></li>
+          <li><a href="#prequel" class="navbar__link">Prequel</a></li>
+        </ul>
+        <div class="lang-selector">
+          <a href="/" class="navbar__link" style="color: #fff;">EN</a>
+          <span style="color: var(--text-muted);">|</span>
+          <a href="/it/" class="navbar__link">IT</a>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <!-- MODULE 2: HERO -->
   <header id="hero" class="hero">
     <div class="container">
-      <div class="hero__content">
-        <span class="hero__tagline text-uppercase">Welcome to the Ledger</span>
-        <h1 class="hero__title">Time is Monitored. Life is Currency.</h1>
-        <p style="font-size: 1.25rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2.5rem;">
-          Dive into a hard-hitting sci-fi universe where every second lived is registered, owned, and traded by an elite class. Will you fight the system, or become an asset?
-        </p>
-        <a href="#books" class="btn btn--brace" style="text-decoration: none; display: inline-block;">Browse Available Records</a>
-      </div>
+      <h1 class="hero__title">Time is Monitored. Life is Currency.</h1>
+      <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 700px;">
+        Dive into a hard-hitting sci-fi universe where every second lived is registered, owned, and traded by an elite class.
+      </p>
+      <a href="#books" class="btn">Browse Available Records</a>
     </div>
   </header>
-
-  <!-- MODULE 3 & 4: BOOKS -->
-  <section id="books" class="section-books">
-    <div class="container">
-      <span class="drift-card__tag">Available Logs</span>
-      <h2 style="font-size: 2.25rem; margin-top: 0.5rem; margin-bottom: 0;">The Published Works</h2>
-      
-      <div class="grid-system grid-system--2-col">
-        <!-- Book 1 -->
-        <div class="drift-card drift-card--tech">
-          <div>
-            <span class="drift-card__tag">Core Novel / Vol. 1</span>
-            <h3 class="drift-card__title">The Drift Core</h3>
-            <p class="drift-card__body">The definitive starting point. Follow the asymmetric war against the Registry as the protocol encounters its first critical failure.</p>
-          </div>
-          <button class="btn btn--brace w-100">View on Amazon KDP</button>
-        </div>
-        <!-- Book 2 -->
-        <div class="drift-card">
-          <div>
-            <span class="drift-card__tag">Expansion / Vol. 2</span>
-            <h3 class="drift-card__title">System Overdrive</h3>
-            <p class="drift-card__body">The direct continuation of the conflict. The asset extraction squads deploy to clear the unlisted sectors before the truth leaks out.</p>
-          </div>
-          <button class="btn btn--brace w-100">View on Amazon KDP</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MODULE 5: REVIEWS -->
-  <section id="reviews" class="section-reviews">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 4rem;">
-        <span class="reviews__tagline">Decrypted Transmissions</span>
-        <h2 style="font-size: 2.25rem; margin-top: 0.5rem; margin-bottom: 0;">Reader Evaluation</h2>
-      </div>
-
-      <div class="grid-system grid-system--3-col">
-        <div class="drift-card">
-          <div>
-            <div class="review-stars">★★★★★</div>
-            <p class="drift-card__body" style="font-style: italic;">"An absolute mind-bending concept. The way time is weaponized kept me up until 3 AM."</p>
-          </div>
-          <div class="reviewer-meta">
-            <span class="reviewer__name">Austin K.</span>
-            <span class="reviewer__status">Verified Purchase</span>
-          </div>
-        </div>
-        <div class="drift-card drift-card--tech">
-          <div>
-            <div class="review-stars">★★★★★</div>
-            <p class="drift-card__body" style="font-style: italic;">"The lore is razor-sharp. A terrifyingly plausible look at what happens when human life is quantified."</p>
-          </div>
-          <div class="reviewer-meta">
-            <span class="reviewer__name">Sarah M.</span>
-            <span class="reviewer__status">Top Contributor</span>
-          </div>
-        </div>
-        <div class="drift-card">
-          <div>
-            <div class="review-stars">★★★★☆</div>
-            <p class="drift-card__body" style="font-style: italic;">"Gritty, fast-paced, and cinematic. Characters are operating in a world completely stripped of mercy."</p>
-          </div>
-          <div class="reviewer-meta">
-            <span class="reviewer__name">Marcus T.</span>
-            <span class="reviewer__status">Verified Purchase</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MODULE 6: PREQUEL LEAD CAPTURE -->
-  <section id="prequel" class="section-prequel">
-    <div class="container">
-      <div class="prequel__content">
-        <span class="drift-card__tag">Classified Dossier</span>
-        <h2 style="font-size: 2.25rem; margin-top: 0.5rem; margin-bottom: 1.5rem;">Before the Registry took everything.</h2>
-        <p class="prequel__description">Enter your email to download the exclusive prequel novella and uncover the origin of the theft.</p>
-        <div class="prequel__meta">
-          <span><strong>Format:</strong> Digital Edition (PDF/EPUB)</span>
-          <span><strong>Access:</strong> Instant Dispatch</span>
-        </div>
-      </div>
-
-      <div class="prequel__action" style="margin-top: 2rem;">
-        <div style="background: rgba(0, 0, 0, 0.4); border: 1px solid var(--cold-line); padding: 2.5rem; border-radius: 4px;">
-          <form id="prequel-form" class="prequel__form" action="#" method="POST" novalidate>
-            <div class="form-group">
-              <label for="prequel-email" class="visually-hidden">Email Address</label>
-              <input type="email" id="prequel-email" class="form-control" placeholder="Enter your email address..." required>
-              <span class="form-error-message">Please enter a valid email address.</span>
-            </div>
-            <button type="submit" class="btn btn--brace w-100">Secure Prequel Access</button>
-            <p class="prequel__privacy">No spam. Only the truth. Unsubscribe with a single click.</p>
-          </form>
-
-          <div class="form-status form-status--success" id="form-success-msg" aria-hidden="true" style="display: none;">
-            <h3 style="color: var(--accent-color); font-size: 1.5rem; margin-top: 0; margin-bottom: 1rem;">Connection Established.</h3>
-            <p style="color: var(--text-muted); margin: 0;">The prequel file has been dispatched to your inbox.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORM SCRIPT -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('prequel-form');
-      const successStatus = document.getElementById('form-success-msg');
-
-      if (form) {
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const emailInput = document.getElementById('prequel-email');
-          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-          if (!emailPattern.test(emailInput.value.trim())) {
-            form.classList.add('has-error');
-            emailInput.focus();
-          } else {
-            form.classList.remove('has-error');
-            form.style.display = 'none';
-            successStatus.style.display = 'block';
-            successStatus.setAttribute('aria-hidden', 'false');
-          }
-        });
-        document.getElementById('prequel-email').addEventListener('input', () => {
-          form.classList.remove('has-error');
-        });
-      }
-    });
-  </script>
+  <!-- ... (rest of the content) ... -->
 </body>
 </html>
