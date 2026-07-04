@@ -35,10 +35,7 @@ export const books = [
       "First book of a sealed five-volume arc"
     ],
     formats: "Paperback \u00b7 Kindle \u00b7 Kindle Unlimited",
-    links: {
-      amazon: "https://www.amazon.com/dp/B0H6TMXJSC",
-      kindleUnlimited: "https://www.amazon.com/dp/B0H6TMXJSC",
-    },
+    links: { amazon: "", kindleUnlimited: "" }, // filled at wiring pass
   },
   {
     id: "book-two",

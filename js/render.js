@@ -14,12 +14,7 @@ function bookCard(b) {
   const title = b.title || "Untitled";
 
   const cover = available && b.cover
-    ? `<div class="book-card__cover">
-         <picture>
-           <source srcset="${b.cover.replace(/\.jpg$/, ".webp")}" type="image/webp" />
-           <img src="${b.cover}" alt="Cover of ${title}" loading="lazy" />
-         </picture>
-       </div>`
+    ? `<div class="book-card__cover"><img src="${b.cover}" alt="Cover of ${title}" loading="lazy" /></div>`
     : `<div class="book-card__cover book-card__cover--sealed" aria-hidden="true">
          <span class="book-card__vol">${b.volume}</span>
        </div>`;

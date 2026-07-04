@@ -9,6 +9,6 @@ import { mountReviews } from "./reviews.js";
 mountYearsCounter();
 renderShelf("#shelf-grid");
 renderDetail("#detail-grid");
-mountPrequel("#prequel-step2");
+mountPrequel("#prequel-funnel");
 mountReviews("#reviews", "#reviews-grid");
-console.info("E. R. Stahl — ledger open (complete — cover, OG, favicon, EO form, buy CTA).");
+console.info("E. R. Stahl — ledger open (Phase 7 — complete).");
