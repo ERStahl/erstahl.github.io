@@ -1,0 +1,46 @@
+/* ==========================================================================
+   E. R. STAHL — DESIGN TOKENS
+   Concept: the site is a page of the Censor's ledger.
+   Cold (#0B0F19) is the freezing universe; Brace (#E65F2B) is the ember
+   the crew carries. Space Mono is the register's voice.
+   ========================================================================== */
+
+:root {
+  /* --- Palette --- */
+  --cold-0: #05070C;        /* deepest background (page) */
+  --cold-1: #0B0F19;        /* base surface */
+  --cold-2: #121828;        /* raised surface (cards) */
+  --line: #1C2438;          /* ledger rule lines, borders */
+  --line-strong: #2A3448;  /* stronger rules (section dividers) */
+  --ink: #E8ECF4;           /* primary text */
+  --ink-dim: #8B94A8;       /* secondary text */
+  --brace: #E65F2B;         /* the ember — accent, CTA */
+  --brace-hot: #FF7A3D;     /* hover state */
+  --frost: #7FB4D9;         /* cold counterpoint, used sparingly (links, thin details) */
+
+  /* --- Type --- */
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-ledger: "Space Mono", ui-monospace, monospace;
+
+  /* Fluid type scale */
+  --fs-hero: clamp(2.4rem, 6.5vw, 4.5rem);
+  --fs-h2: clamp(1.6rem, 3.5vw, 2.4rem);
+  --fs-h3: 1.25rem;
+  --fs-body: 1.0625rem;     /* 17px */
+  --fs-small: 0.9375rem;    /* 15px */
+  --fs-ledger: 0.8125rem;   /* 13px — entry labels, counter */
+
+  /* --- Spacing scale (multiples of 8) --- */
+  --sp-1: 0.5rem;
+  --sp-2: 1rem;
+  --sp-3: 1.5rem;
+  --sp-4: 2rem;
+  --sp-6: 3rem;
+  --sp-8: 4rem;
+  --sp-12: 6rem;
+
+  /* --- Layout --- */
+  --container: 1080px;
+  --radius: 3px;            /* almost square: ledger, not app */
+}

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>E. R. Stahl — The Drift</title>
+  <meta name="description" content="The Drift, a five-volume space opera by E. R. Stahl. In a dying universe, your years are currency — and one immortal owns the ledger." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="E. R. Stahl — The Drift" />
+  <meta property="og:description" content="In a dying universe, your years are currency — and one immortal owns the ledger." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="assets/og-image.jpg" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0B0F19" />
+
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-header__brand" href="/">E.&thinsp;R.&thinsp;Stahl</a>
+    </div>
+  </header>
+
+  <!-- Entries land one at a time:
+       001 Hero · 002 Atmosphere · 003 The Books · 004 Book One
+       005 The Prequel (EmailOctopus) · 006 Readers · 007 The Author -->
+  <main id="app">
+
+    <!-- ENTRY 001 — THE HOOK -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="entry__label">
+          <span class="ledger"><b>ENTRY 001</b> — THE HOOK</span>
+        </div>
+        <h1 class="hero__title">In a dying universe, your <em>years</em> are currency &mdash; and one immortal owns the <em>ledger</em>.</h1>
+        <p class="hero__comps ledger">The Drift &middot; A five-volume space opera &middot; For readers of Dune and The Expanse</p>
+        <div class="hero__cta">
+          <a href="#prequel" class="btn btn--brace">Read the Prequel Free</a>
+          <a href="#book-one" class="btn btn--ghost">Get Book One</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENTRY 002 — THE COLD -->
+    <section id="atmosphere" class="atmosphere">
+      <div class="container">
+        <div class="entry__label">
+          <span class="ledger"><b>ENTRY 002</b> — THE COLD</span>
+        </div>
+        <p class="atmosphere__line">The engine that lit a thousand worlds is <em>freezing the universe to death</em>.</p>
+        <p class="atmosphere__reading ledger">Well output: <b>&minus;0.5&deg;</b> per cycle &middot; Margin of survival: <b>half a degree</b></p>
+      </div>
+    </section>
+
+    <!-- ENTRY 003 — THE BOOKS -->
+    <section id="books" class="shelf">
+      <div class="container">
+        <div class="entry__label">
+          <span class="ledger"><b>ENTRY 003</b> — THE BOOKS</span>
+        </div>
+        <div id="shelf-grid" class="shelf__grid"></div>
+      </div>
+    </section>
+
+    <!-- ENTRY 004 — BOOK ONE -->
+    <section id="book-detail" class="detail">
+      <div class="container">
+        <div class="entry__label">
+          <span class="ledger"><b>ENTRY 004</b> — BOOK ONE</span>
+        </div>
+        <div id="detail-grid" class="detail__grid"></div>
+      </div>
+    </section>
+
+    <!-- ENTRY 005 — THE PREQUEL -->
+    <section id="prequel" class="entry">
+      <div class="container">
+        <div class="entry__label">
+          <span class="ledger"><b>ENTRY 005</b> — THE PREQUEL</span>
+        </div>
+
+        <ol class="funnel">
+          <li class="funnel__step">
+            <p class="ledger funnel__num">Step 1</p>
+            <h3 class="funnel__head">Claim your years back</h3>
+            <p class="funnel__lede">Before the Censor took everything, one man paid his own years into the register. Read <em>The Price of Years</em> &mdash; the free prequel to The Drift &mdash; and see where the first debt began.</p>
+
+            <!-- EmailOctopus embedded form (engine), styled by the site's ledger CSS -->
+            <div id="eo-form-wrap" class="funnel__form-wrap">
+              <script async src="https://eomail5.com/form/4b16d84e-776c-11f1-80fe-4f10231cc5b2.js" data-form="4b16d84e-776c-11f1-80fe-4f10231cc5b2"></script>
+            </div>
+
+            <p class="funnel__fine ledger">Free EPUB &amp; PDF. No spam. Leave the ledger any time.</p>
+          </li>
+
+          <li class="funnel__step" id="prequel-step2"></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ENTRY 006 — READERS (hidden until real reviews exist) -->
+    <section id="reviews" class="reviews">
+      <div class="container">
+        <div class="entry__label">
+          <span class="ledger"><b>ENTRY 006</b> — READERS ON RECORD</span>
+        </div>
+        <div id="reviews-grid" class="reviews__grid"></div>
+      </div>
+    </section>
+
+    <!-- ENTRY 007 — THE AUTHOR -->
+    <section id="author" class="author">
+      <div class="container">
+        <div class="entry__label">
+          <span class="ledger"><b>ENTRY 007</b> — THE AUTHOR</span>
+        </div>
+        <div class="author__body">
+          <p><strong>E. R. Stahl</strong> writes cold, hard-edged space opera: worlds run on ledgers, survival is measured to the decimal, and the smallest number on the page is usually the one that costs the most.</p>
+          <p><em>The Drift</em> is a sealed five-volume saga. Book One, <em>Half a Degree</em>, is on record. The rest are coming.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <ul class="site-footer__nav">
+        <li><a href="#hero">The Hook</a></li>
+        <li><a href="#books">The Books</a></li>
+        <li><a href="#prequel">The Prequel</a></li>
+        <li><a href="#author">The Author</a></li>
+      </ul>
+      <p class="site-footer__seal">The Drift &copy; E.&thinsp;R.&thinsp;Stahl &middot; <b>Ledger closed</b></p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
