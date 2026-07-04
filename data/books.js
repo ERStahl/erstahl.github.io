@@ -35,7 +35,10 @@ export const books = [
       "First book of a sealed five-volume arc"
     ],
     formats: "Paperback \u00b7 Kindle \u00b7 Kindle Unlimited",
-    links: { amazon: "", kindleUnlimited: "" }, // filled at wiring pass
+    links: {
+      amazon: "https://www.amazon.com/dp/B0H6TMXJSC",
+      kindleUnlimited: "https://www.amazon.com/dp/B0H6TMXJSC",
+    },
   },
   {
     id: "book-two",
@@ -89,3 +92,19 @@ export const books = [
 
 export const featured = books.find((b) => b.status === "available");
 export const upcoming = books.filter((b) => b.status === "coming-soon");
+
+/* --- Games (future category) -------------------------------------------
+   The Ledger Game (tabletop RPG) is in development, not yet for sale.
+   When it ships, fill an entry here and the site can render a product card
+   the same way it does for books. No fake price/link until it exists. */
+export const games = [
+  {
+    id: "ledger-game",
+    status: "in-development",      // -> "available" when it ships
+    title: "The Price of Years — the Ledger Game",
+    kind: "Tabletop RPG",
+    teaser: "Keep the sum even. Or someone gets struck.",
+    channel: "",                    // "DriveThruRPG" | "itch.io" | "Amazon" — decided later
+    links: {},                      // filled when for sale
+  },
+];

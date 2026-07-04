@@ -11,7 +11,10 @@ export function renderDetail(mountSelector) {
   const b = featured;
 
   const cover = b.cover
-    ? `<img src="${b.cover}" alt="Cover of ${b.title}" loading="lazy" />`
+    ? `<picture>
+         <source srcset="${b.cover.replace(/\.jpg$/, ".webp")}" type="image/webp" />
+         <img src="${b.cover}" alt="Cover of ${b.title}" loading="lazy" />
+       </picture>`
     : `<div class="detail__cover-placeholder" aria-hidden="true">
          <span>${b.volume}</span><span>${b.title}</span>
        </div>`;
@@ -24,14 +27,15 @@ export function renderDetail(mountSelector) {
     .map((t) => `<li>${t}</li>`)
     .join("");
 
-  // Buy buttons: enabled only when a link exists; otherwise labelled clearly.
+  // Single primary CTA to the book's Amazon page. KU is noted below, not
+  // as a twin button (same URL) — it's a benefit line, not a second action.
   const amazon = b.links && b.links.amazon
     ? `<a href="${b.links.amazon}" class="btn btn--brace" target="_blank" rel="noopener">Buy on Amazon</a>`
     : `<span class="btn btn--brace is-disabled" aria-disabled="true">Buy on Amazon</span>`;
 
-  const ku = b.links && b.links.kindleUnlimited
-    ? `<a href="${b.links.kindleUnlimited}" class="btn btn--ghost" target="_blank" rel="noopener">Read on Kindle Unlimited</a>`
-    : `<span class="btn btn--ghost is-disabled" aria-disabled="true">Read on Kindle Unlimited</span>`;
+  const kuNote = b.links && b.links.kindleUnlimited
+    ? `<p class="detail__ku ledger">Also free to read on Kindle Unlimited</p>`
+    : "";
 
   mount.innerHTML = `
     <div class="detail__cover">${cover}</div>
@@ -47,6 +51,7 @@ export function renderDetail(mountSelector) {
       <ul class="detail__tropes">${tropes}</ul>
 
       <p class="ledger detail__formats">${b.formats || ""}</p>
-      <div class="detail__buy">${amazon}${ku}</div>
+      <div class="detail__buy">${amazon}</div>
+      ${kuNote}
     </div>`;
 }

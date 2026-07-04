@@ -9,6 +9,6 @@ import { mountReviews } from "./reviews.js";
 mountYearsCounter();
 renderShelf("#shelf-grid");
 renderDetail("#detail-grid");
-mountPrequel("#prequel-funnel");
+mountPrequel("#prequel-step2");
 mountReviews("#reviews", "#reviews-grid");
-console.info("E. R. Stahl — ledger open (Phase 7 — complete).");
+console.info("E. R. Stahl — ledger open (complete + prequel download + game teaser);

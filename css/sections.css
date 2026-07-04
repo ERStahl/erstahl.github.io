@@ -261,6 +261,17 @@
 
 .detail__formats { margin: 0 0 var(--sp-3); color: var(--ink-dim); }
 .detail__buy { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.detail__ku {
+  margin: var(--sp-2) 0 0;
+  color: var(--frost);
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+.detail__ku::before {
+  content: "\2726"; /* small four-point star */
+  color: var(--brace);
+  margin-right: 0.5em;
+}
 
 .btn.is-disabled {
   opacity: 0.45; cursor: not-allowed; pointer-events: none;
@@ -324,6 +335,69 @@
 
 .funnel__fine { margin: var(--sp-2) 0 0; opacity: 0.75; text-transform: none; letter-spacing: 0.02em; }
 
+/* --- EmailOctopus embed, dressed in the ledger look --------------------- */
+/* The EO script injects its own field + button after load; we restyle it,
+   scoped to the wrapper, using !important to win over its late styles. */
+.funnel__form-wrap { margin: 0 0 var(--sp-1); }
+
+#eo-form-wrap form {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: var(--sp-1) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  max-width: none !important;
+}
+#eo-form-wrap input[type="email"],
+#eo-form-wrap input[type="text"] {
+  flex: 1 1 220px !important;
+  min-width: 0 !important;
+  background: var(--cold-1) !important;
+  border: 1px solid var(--line-strong) !important;
+  border-radius: var(--radius) !important;
+  color: var(--ink) !important;
+  font-family: var(--font-body) !important;
+  font-size: var(--fs-body) !important;
+  padding: 0.9rem 1rem !important;
+  box-shadow: none !important;
+}
+#eo-form-wrap input::placeholder { color: var(--ink-dim) !important; }
+#eo-form-wrap input:focus-visible {
+  border-color: var(--brace) !important;
+  outline: none !important;
+}
+#eo-form-wrap button,
+#eo-form-wrap input[type="submit"] {
+  flex: 0 0 auto !important;
+  background: var(--brace) !important;
+  color: #0B0F19 !important;
+  border: 1px solid transparent !important;
+  border-radius: var(--radius) !important;
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 0.9rem 1.8rem !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  transition: background-color 0.15s ease !important;
+}
+#eo-form-wrap button:hover,
+#eo-form-wrap input[type="submit"]:hover { background: var(--brace-hot) !important; }
+
+/* success / error messages from EO */
+#eo-form-wrap .octopus-success-message,
+#eo-form-wrap [class*="success"] { color: var(--frost) !important; }
+#eo-form-wrap .octopus-error-message,
+#eo-form-wrap [class*="error"] { color: var(--brace-hot) !important; }
+
+/* consent checkbox label, if enabled */
+#eo-form-wrap label { color: var(--ink-dim) !important; font-size: var(--fs-small) !important; }
+
+/* hide EO's own heading/description if any (we provide our own pitch) */
+#eo-form-wrap h1, #eo-form-wrap h2, #eo-form-wrap h3, #eo-form-wrap p:first-child:empty { display: none !important; }
+
 .visually-hidden {
   position: absolute !important;
   width: 1px; height: 1px;
@@ -380,6 +454,32 @@
 }
 .review__name { font-weight: 600; }
 .review__source { color: var(--ink-dim); }
+
+/* --- The Game teaser (ENTRY 006) ---------------------------------------- */
+.game-teaser__grid {
+  display: grid;
+  gap: var(--sp-4);
+  grid-template-columns: 1fr;
+  margin-top: var(--sp-4);
+  align-items: start;
+}
+@media (min-width: 820px) {
+  .game-teaser__grid { grid-template-columns: 1.5fr 1fr; gap: var(--sp-6); }
+}
+.game-teaser__status { color: var(--frost); margin: 0 0 var(--sp-2); }
+.game-teaser__head { font-size: var(--fs-h2); margin: 0 0 var(--sp-3); max-width: 20ch; }
+.game-teaser__lede { color: var(--ink-dim); margin: 0 0 var(--sp-3); }
+.game-teaser__lede em { color: var(--brace); font-style: normal; font-weight: 600; }
+.game-teaser__note { color: var(--ink-dim); margin: 0; }
+.game-teaser__cta-box {
+  background: var(--cold-2);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--brace);
+  border-radius: var(--radius);
+  padding: var(--sp-4);
+}
+.game-teaser__cta-box .ledger { color: var(--brace); margin: 0 0 var(--sp-2); }
+.game-teaser__cta-box .muted { margin: 0 0 var(--sp-3); font-size: var(--fs-small); }
 
 /* --- The Author + footer (ENTRY 007) ------------------------------------ */
 .author {

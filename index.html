@@ -10,8 +10,17 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="E. R. Stahl — The Drift" />
   <meta property="og:description" content="In a dying universe, your years are currency — and one immortal owns the ledger." />
-  <!-- og:image added in the finishing pass -->
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="assets/og-image.jpg" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0B0F19" />
 
   <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/tokens.css" />
@@ -82,25 +91,63 @@
         <div class="entry__label">
           <span class="ledger"><b>ENTRY 005</b> — THE PREQUEL</span>
         </div>
-        <div id="prequel-funnel"></div>
+
+        <ol class="funnel">
+          <li class="funnel__step">
+            <p class="ledger funnel__num">Step 1</p>
+            <h3 class="funnel__head">Claim your years back</h3>
+            <p class="funnel__lede">Before the Censor took everything, one man paid his own years into the register. Read <em>The Price of Years</em> &mdash; the free prequel to The Drift &mdash; and see where the first debt began.</p>
+
+            <!-- EmailOctopus embedded form (engine), styled by the site's ledger CSS -->
+            <div id="eo-form-wrap" class="funnel__form-wrap">
+              <script async src="https://eomail5.com/form/4b16d84e-776c-11f1-80fe-4f10231cc5b2.js" data-form="4b16d84e-776c-11f1-80fe-4f10231cc5b2"></script>
+            </div>
+
+            <p class="funnel__fine ledger">Free EPUB &amp; PDF. No spam. Leave the ledger any time.</p>
+          </li>
+
+          <li class="funnel__step" id="prequel-step2"></li>
+        </ol>
       </div>
     </section>
 
-    <!-- ENTRY 006 — READERS (hidden until real reviews exist) -->
+    <!-- ENTRY 006 — THE GAME (teaser, not yet for sale) -->
+    <section id="game" class="entry game-teaser">
+      <div class="container">
+        <div class="entry__label">
+          <span class="ledger"><b>ENTRY 006</b> &mdash; THE LEDGER GAME</span>
+        </div>
+        <div class="game-teaser__grid">
+          <div>
+            <p class="ledger game-teaser__status">In development</p>
+            <h2 class="game-teaser__head">Keep the sum even. Or someone gets struck.</h2>
+            <p class="game-teaser__lede">A tabletop role-playing game set in the world of the Register, five centuries before The Drift. You play a Scribe, an Exchequer, or one of the Struck &mdash; and the only resource that counts is years of life. Every year taken from one line must be added to another. The register must balance. The Censor is not watching for mistakes. He is watching for a count that comes out <em>too</em> perfect.</p>
+            <p class="game-teaser__note ledger">Same world. Same ledger. No heroes &mdash; only arithmetic.</p>
+          </div>
+          <div class="game-teaser__cta-box">
+            <p class="ledger">Be told when it opens</p>
+            <p class="muted">The game will be announced first to the register. Join the list for the prequel and you are already on it.</p>
+            <a href="#prequel" class="btn btn--brace">Join the list</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENTRY 007 — READERS (hidden until real reviews exist) -->
     <section id="reviews" class="reviews">
       <div class="container">
         <div class="entry__label">
-          <span class="ledger"><b>ENTRY 006</b> — READERS ON RECORD</span>
+          <span class="ledger"><b>ENTRY 007</b> — READERS ON RECORD</span>
         </div>
         <div id="reviews-grid" class="reviews__grid"></div>
       </div>
     </section>
 
-    <!-- ENTRY 007 — THE AUTHOR -->
+    <!-- ENTRY 008 — THE AUTHOR -->
     <section id="author" class="author">
       <div class="container">
         <div class="entry__label">
-          <span class="ledger"><b>ENTRY 007</b> — THE AUTHOR</span>
+          <span class="ledger"><b>ENTRY 008</b> — THE AUTHOR</span>
         </div>
         <div class="author__body">
           <p><strong>E. R. Stahl</strong> writes cold, hard-edged space opera: worlds run on ledgers, survival is measured to the decimal, and the smallest number on the page is usually the one that costs the most.</p>
@@ -117,6 +164,7 @@
         <li><a href="#hero">The Hook</a></li>
         <li><a href="#books">The Books</a></li>
         <li><a href="#prequel">The Prequel</a></li>
+        <li><a href="#game">The Game</a></li>
         <li><a href="#author">The Author</a></li>
       </ul>
       <p class="site-footer__seal">The Drift &copy; E.&thinsp;R.&thinsp;Stahl &middot; <b>Ledger closed</b></p>
